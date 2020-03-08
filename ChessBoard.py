@@ -122,8 +122,11 @@ class ChessBoard:
 			else:
 				ChessBoard.__activeColour__ = ChessColour.WHITE
 				ChessBoard.__fullMove__ = ChessBoard.__fullMove__ + 1
-				
-		return True
+			# RETURN TRUE (THE MOVE WAS DONE)
+			return True
+		# RETURN FALSE (THE MOVE COULD NOT BE DONE)
+		else:
+			return False
 
 	# String function 
 	# Print the board in BOARD mode
