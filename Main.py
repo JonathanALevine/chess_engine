@@ -13,7 +13,5 @@ test.move(Coordinate("e2"), Coordinate("e4"))
 print(test)
 test.move(Coordinate("b8"), Coordinate("c6"))
 print(test)
-
-
-
-
+test.move(Coordinate("a2"), Coordinate("a4"))
+print(test)
