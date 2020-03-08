@@ -25,10 +25,15 @@ class Pawn(Piece.Piece):
 			destination_row = destination.getRowNumber()
 
 			# Rules change depending on if capturing a piece
+			# If the destination square is occupied, capturing a piece
 			if(chessboard[destination_column][destination_row].isOccupied()):
 				pass
-			
 
+			# The destination square is not occupied
+			else:
+				pass
+
+			
 			# Set the first move to False
 			self.first_move = False
 		else:
