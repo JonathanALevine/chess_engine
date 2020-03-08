@@ -1,5 +1,4 @@
 
-
 from ChessColour import *
 from ChessPieces import *
 import Piece
@@ -24,15 +23,26 @@ class Pawn(Piece.Piece):
 			destination_column = destination.getColumnNumber()
 			destination_row = destination.getRowNumber()
 
-			# Rules change depending on if capturing a piece
-			# If the destination square is occupied, capturing a piece
-			if(chessboard[destination_column][destination_row].isOccupied()):
-				pass
+			# The rules of capture depend on if it is a WHITE Pawn or a BLACK Pawn
+			# WHITE Pawn logic
+			if(chessboard.getSquare(source).getPiece().getColour() is ChessColour.WHITE):
+				# If the destination square is occupied
+				if(chessboard.getSquare(source).isOccupied()):
+					# The destination row can only be +1 the source row
+					# The destination column can only be +1 the source column
+					pass
 
-			# The destination square is not occupied
+				# Not occupied
+				else:
+					pass
+			# BLACK Pawn logic
 			else:
-				pass
-
+				# If the destination square is occupied
+				if(chessboard.getSquare(source).isOccupied()):
+					pass
+				# Not occupied
+				else:
+					pass
 			
 			# Set the first move to False
 			self.first_move = False
