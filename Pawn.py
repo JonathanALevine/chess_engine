@@ -25,6 +25,8 @@ class Pawn(Piece.Piece):
 			destination_row = destination.getRowNumber()
 
 			# Rules change depending on if capturing a piece
+			if(chessboard[destination_column][destination_row].isOccupied()):
+				pass
 			
 
 			# Set the first move to False
