@@ -102,19 +102,23 @@ class ChessBoard:
 		destination_row = destination.getRowNumber()
 
 		# If the source square is empty, return False
-		if(self.chessboard[source_column][source_row].getPiece() is None): 
+		if(self.getSquare(source).getPiece() is None): 
+			return False
+
+		# If the piece on the destination square is the same colour as the active piece colour, return FALSE
+		if(self.getSquare(destination).isOccupied() and self.getSquare(destination).getPiece().getColour() is ChessBoard.__activeColour__):
 			return False
 
 		# If the move on the source piece is a legal move
-		if(self.chessboard[source_column][source_row].getPiece().isLegalMove(self,source, destination)):
+		if(self.getSquare(source).getPiece().isLegalMove(self,source, destination)):
 			# If the move is not on the active colour's turn return False
-			if(self.chessboard[source_column][source_row].getPiece().getColour() is not ChessBoard.__activeColour__):
+			if(self.getSquare(source).getPiece().getColour() is not ChessBoard.__activeColour__):
 				return False
 
 			# Do the move
 			# change the active colour
 			# increment the move number
-			self.chessboard[destination_column][destination_row].addPiece(self.chessboard[source_column][source_row].deletePiece())
+			self.getSquare(destination).addPiece(self.getSquare(source).deletePiece())
 
 			# change the active colour 
 			if(ChessBoard.__activeColour__ is ChessColour.WHITE):

@@ -5,13 +5,17 @@ import Piece
 import math
 
 class Pawn(Piece.Piece):
+	# Constructor
+	# Sets the first_move parameter to True
 	def __init__(self, colour):
 		# Instatiate the pawn from piece class with inheritance
 		# Inherite all methods from the piece class by using super
 		super().__init__(ChessPieces.PAWN, colour)
 		# Instatiate the pawn's first move
 		self.first_move = True
-
+	# isLegalMove() method
+	# Detects if the Pawn move is legal
+	# Returns True or False depending
 	def isLegalMove(self, chessboard, source, destination):
 		# Source square coordinates
 		source_column = source.getColumnNumber()
