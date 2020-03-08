@@ -16,4 +16,6 @@ class Knight(Piece.Piece):
 		destination_column = destination.getColumnNumber()
 		destination_row = destination.getRowNumber()
 
+		
+
 		return True
