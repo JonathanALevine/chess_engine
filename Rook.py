@@ -9,5 +9,12 @@ class Rook(Piece.Piece):
 		super().__init__(ChessPieces.ROOK, colour)
 
 	def isLegalMove(self, chessboard, source, destination):
+		# Source square coordinates
+		source_column = source.getColumnNumber()
+		source_row = source.getRowNumber()
+		# Destination square coordinates
+		destination_column = destination.getColumnNumber()
+		destination_row = destination.getRowNumber()
+
 		return True
 
