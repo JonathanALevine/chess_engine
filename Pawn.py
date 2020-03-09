@@ -5,13 +5,17 @@ import Piece
 import math
 
 class Pawn(Piece.Piece):
+	# Constructor
+	# Sets the first_move parameter to True
 	def __init__(self, colour):
 		# Instatiate the pawn from piece class with inheritance
 		# Inherite all methods from the piece class by using super
 		super().__init__(ChessPieces.PAWN, colour)
 		# Instatiate the pawn's first move
 		self.first_move = True
-
+	# isLegalMove() method
+	# Detects if the Pawn move is legal
+	# Returns True or False depending
 	def isLegalMove(self, chessboard, source, destination):
 		# Source square coordinates
 		source_column = source.getColumnNumber()
@@ -31,12 +35,15 @@ class Pawn(Piece.Piece):
 					return True
 				else:
 					return False
-			# Not occupied
+			# Not capturing a piece
 			else:
 				# If on the FIRST MOVE, pawns can advance two squares or one
+				# Pawns cannot jump over other pieces
 				if(self.first_move and ((destination_row - source_row == 1) or (destination_row - source_row == 2)) and
-					(abs(destination_column-source_column) == 0)):
+					(destination_column-source_column == 0) and not(chessboard.chessboard[source_column][source_row+1].isOccupied())):
 					self.first_move = False
+					return True
+				elif(not(self.first_move) and (destination_row - source_row == 1) and (destination_column-source_column == 0)):
 					return True
 				else:
 					return False
@@ -53,10 +60,13 @@ class Pawn(Piece.Piece):
 					return False
 			# Not occupied
 			else:
-				# If on the FIRST MOVE, the pawns can advance two squares or one
-				if(self.first_move and (destination_row - source_row == -1) or (destination_row - source_row == -2) and 
-					(abs(destination_column-source_column) == 0)):
+				# If on the FIRST MOVE, pawns can advance two squares or one
+				# Pawns cannot jump over other pieces
+				if(self.first_move and ((destination_row - source_row == -1) or (destination_row - source_row == -2)) and
+					(destination_column-source_column == 0) and not(chessboard.chessboard[source_column][source_row-1].isOccupied())):
 					self.first_move = False
+					return True
+				elif(not(self.first_move) and (destination_row - source_row == -1) and (destination_column-source_column == 0)):
 					return True
 				else:
 					return False

@@ -2,7 +2,6 @@
 class Coordinate:
 
     def __init__(self, coordinate):
-
         # The column must be between "a" and "h"
         # The column must be a letter ..... to be implemented
         if ord(coordinate[0]) >= 97+8:
@@ -11,7 +10,6 @@ class Coordinate:
         if int(coordinate[1]) > 8 or int(coordinate[1]) < 1:
             raise ValueError
         # The row must be number ..... to be implemented
-
         # Instantiate the coordinate
         self.coordinate = coordinate
         # Instatiate the column and the row based on the coordinate
