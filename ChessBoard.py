@@ -106,7 +106,8 @@ class ChessBoard:
 			return False
 
 		# If the piece on the destination square is the same colour as the active piece colour, return FALSE
-		if(self.getSquare(destination).isOccupied() and self.getSquare(destination).getPiece().getColour() is ChessBoard.__activeColour__):
+		if(self.getSquare(destination).isOccupied() and self.getSquare(destination).getPiece().getColour() 
+			is ChessBoard.__activeColour__):
 			return False
 
 		# If the move on the source piece is a legal move
