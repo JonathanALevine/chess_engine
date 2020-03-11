@@ -21,6 +21,12 @@ class Square:
 	def getRow(self):
 		return self.getCoordinate().getRow()
 
+	def getRowNumber(self):
+		return self.getCoordinate().getRowNumber()
+
+	def getColumnNumber(self):
+		return self.getCoordinate().getColumnNumber()
+
 	# addPiece() stores the old piece in temp, sets the square piece
 	# to the new piece and returns the old piece
 	def addPiece(self, newPiece):
