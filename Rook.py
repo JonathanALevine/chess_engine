@@ -21,6 +21,7 @@ class Rook(Piece.Piece):
 		# (1) The row changes but the column does not change
 		# (2) The column changes but the row does not change
 		# (3) Cannot jump over a piece
+		
 
 		return True
 
