@@ -157,4 +157,25 @@ class ChessBoard:
 	# Print the board in FEN mode
 	# White Pieces on the left
 	def toFEN(self):
-		pass
+		out = "FEN: "
+		for i in range(7, -1, -1):
+			for j in range(0, 8):
+				if(self.chessboard[j][i].getPiece() is None):
+					out += " "
+				else:
+					out += self.chessboard[j][i].getPiece().getShortName()
+			out += "/"
+
+		if(self.__activeColour__ is ChessColour.WHITE):
+			out += (" w " + str(self.__fullMove__))
+
+		else:
+			out += (" b " + str(self.__fullMove__))
+
+		return out
+
+
+
+
+
+

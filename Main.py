@@ -8,7 +8,6 @@ from Coordinate import *
 from ChessBoard import *
 
 test = ChessBoard()
-print(test)
 print(test.move(Coordinate("b1"), Coordinate("c3")))
 print(test)
 print(test.move(Coordinate("d7"), Coordinate("d5")))
